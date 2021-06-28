@@ -1,0 +1,20 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    <p>
+        What is the chance that your opponent’s valuation is any given number between 0 and 100? For example, what
+        is the chance that your opponent’s valuation is 53?
+    </p>
+    <p style="color:blue">
+        Answer: Since their valuation is equally likely to be any whole number between 0 and 100, and there are 101
+        such numbers, the chance is 1/101 (roughly 1%).
+    </p>
+
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+    <p>
+        If you win the auction, you receive your valuation but have to pay your bid. Hence, what you win overall is
+        your valuation minus your bid. For example, if your valuation is {{ value }} tokens, and you bid {{ bid }} tokens, then you
+        receive {{ value }} – {{ bid }} = {{ net }} tokens if you win the auction. If you lose the auction, then you don’t gain (or lose) any
+        tokens in that round.
+    </p>
+
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+    <p>TODO: text to introduce participants' payoff</p>
+    <p>Total: {{ participant.payoff }}</p>
+    <p>Token so far: {{ participant.vars.tokens_so_far}}</p>
+
+    <p>
+        Many thanks for participating in the experiment!
+    </p>
+
+    {% formfields %}
+
+    {% comment %}
+        <p>
+            You will receive an email in the next 48 hours outlining payment information.
+        </p>
+    {% endcomment %}
+
+    <p>
+        <button class="otree-btn-next btn btn-primary">Finish the study</button>
+    </p>
+
+{% endblock %}

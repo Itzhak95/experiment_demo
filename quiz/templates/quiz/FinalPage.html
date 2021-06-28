@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    <p>
+    It’s now time to bid in some auctions!
+    </p>
+    <p>
+        On the next page, we will ask you how many tokens you would hypothetically want to bid given various possible
+        valuations that you could have. It is important that you answer accurately since one of the valuations below
+        will be your actual valuation -- and you will be committed to submitting the corresponding bid that you have
+        entered below. For example, if you say that you would want to bid {{ bid }} if your valuation were {{ value }},
+        and your valuation turns out to be {{ value }}, then {{ bid }} would be your actual bid.
+    </p>
+    {% next_button %}
+
+{% endblock %}

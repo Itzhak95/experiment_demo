@@ -1,0 +1,20 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    <p>
+        What is the chance that your opponent's valuation is any given number between 0 and {{ Constants.max_value }}?
+        For example, what is the chance that your opponent's valuation is 53?
+    </p>
+
+    {% formfields %}
+
+    {% next_button %}
+
+    {% include 'quiz/summary.html' %}
+
+{% endblock %}

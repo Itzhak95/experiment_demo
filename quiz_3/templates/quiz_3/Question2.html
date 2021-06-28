@@ -1,0 +1,24 @@
+{% extends "global/QuizPage.html" %}
+{% load otree static %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+    <p>
+        Suppose that your valuation is <span id="ego_v">{{ q.ego_v }}</span> and that you
+        choose to bid <span id="ego_b">{{ q.ego_b }}</span>.
+        Suppose further that {% if num_bidders == 2 %}
+        your opponent’s valuation is <span id="alter_v">{{ q.alter_v }}</span> and that they bid <span id="alter_b">{{ q.alter_b }}</span>.
+        {% else %}
+        your opponent who bids the most has a valuation of <span id="alter_v">{{ q.alter_v }}</span> and submits a bid of <span id="alter_b">{{ q.alter_b }}</span>.
+        {% endif %}
+    </p>
+
+    {% formfields %}
+
+    {% next_button %}
+
+    {% include 'quiz_3/Summary.html' %}
+
+{% endblock %}

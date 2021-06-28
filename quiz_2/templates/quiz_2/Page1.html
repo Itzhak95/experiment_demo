@@ -1,0 +1,25 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    <p>
+    You and another player must each choose a (whole) number between 11 and 20 inclusive.  You will be paid (in tokens)
+    whatever number you choose multiplied by 10. For example, if you choose the number {{ x }}, you will be paid {{ y }} tokens.
+    In addition,
+    </p>
+    <ul>
+    <li>If the number you choose is exactly one lower than the number chosen by your opponent, you receive a bonus of 200 tokens.</li>
+        <li>If the number you choose is the same as the number chosen by your opponent, you receive a bonus of 100 tokens.</li>
+    </ul>
+    <p>
+    Your opponent is playing the same game as you and has received the exact same instructions. So for example, they
+    will receive a bonus of 200 tokens if their number is exactly 1 lower than yours.
+    </p>
+
+    {% next_button %}
+
+{% endblock %}

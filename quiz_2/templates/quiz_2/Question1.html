@@ -1,0 +1,20 @@
+{% extends "global/QuizPageAdHoc.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    <p>
+        Suppose that your opponent chooses the number <span id="alter_c">{{ q.alter_c }}</span>
+        and that you choose <span id="ego_c">{{ q.ego_c }}</span>.
+    </p>
+
+    {% formfields %}
+
+    {% next_button %}
+
+    {% include 'quiz_2/Summary.html' %}
+
+{% endblock %}

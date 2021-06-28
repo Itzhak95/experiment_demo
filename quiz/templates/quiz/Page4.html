@@ -1,0 +1,20 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+    <p>
+        Finally, once you have chosen how much to bid, we will flip a coin to decide whether your bid is ‘cancelled’.
+        Simultaneously, we will flip a (separate) coin to determine if your opponent’s bid is cancelled. As you might expect:
+    </p>
+    <ul>
+        <li> If your bid is cancelled, then you cannot win the auction that round and cannot receive (or lose) any tokens. </li>
+        <li> If your opponent’s bid is cancelled but yours is not, then you will win the auction no matter what you bid.</li>
+        <li> If neither of your bids are cancelled, you win the auction if and only if you bid strictly more than your opponent (neither player wins the auction if both of your bids happen to be exactly the same).</li>
+    </ul>
+
+    {% next_button %}
+
+{% endblock %}

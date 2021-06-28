@@ -1,0 +1,116 @@
+{% extends "otree/Page.html" %}
+{% load otree static %}
+
+{% block global_styles  %}
+    <style>
+        .otree-timer {
+            display: block;
+        }
+        /* Overwrite styling class to customize error page displayed on page header */
+        .otree-form-errors {
+            display: none;
+            text-align: center;
+            background-color: #add8e6;
+            border-color: #add8e6;
+            color: #ff0000;
+        }
+        /* Styling class to be added for avoiding red box-effect or page load after first error */
+        .reset-invalid:invalid{
+            box-shadow: 0 0 0 0 #ffffff
+        }
+    </style>
+{% endblock %}
+
+{% block global_scripts  %}
+    <script>
+        let $next = $('.otree-btn-next'),
+            isNextQ = false,
+            egoC = $('#ego_c'), alterC = $('#alter_c'),
+            numberFields = $('input[type=number]'),
+            form = $('#form'),
+            isCorrect = false,
+            questionN = numberFields[0].name.replace(/[^0-9]/g,'');
+
+        let setErrors = function (errors) {
+            $.each(errors, function(k, v) {
+                $('.field-' + k).find('.form-control-errors').html(v)
+            });
+        };
+
+        let resetForm = function () {
+            // Remove values used to populate fields on page load after first error
+            numberFields.prop('value', '');
+            // Recreate standard html/Bootstrap behaviour when fields get focus/blurred and values are missing/incorrect
+            $('.form-control').addClass('reset-invalid').on('focus', function () {
+                $(this).removeClass('reset-invalid').on('blur', function () {
+                    var validity = $(this).prop('validity');
+                    if (validity.valueMissing) {
+                        $(this).addClass('reset-invalid');
+                    }
+                })
+            });
+        };
+
+        $(function () {
+            let errorsDiv = '<div class="form-control-errors"></div>';
+
+            let valueParser = function (v) {
+                return v === 'True' ? true : v === 'False' ? false : parseInt(v);
+            };
+
+            $('.controls').append(errorsDiv);
+            $next.html('Submit');
+
+            form.on('submit', function (e) {
+                if (!isCorrect) {
+                    e.preventDefault();
+
+                    $('.form-control').removeClass('reset-invalid');
+
+                    if (!form[0].checkValidity()) {
+                        $next.click();
+                        return false
+                    }
+
+                    let data = {}, values = {};
+                    $('input').each(function () {
+                        if ($(this).prop('name') !== 'csrfmiddlewaretoken')
+                            values[$(this).prop('name')] = valueParser($(this).val());
+                    });
+                    data['values'] = values;
+                    data['is_next_q'] = isNextQ;
+                    data['question_n'] = parseInt(questionN);
+                    console.log('data =', data);
+                    liveSend(data);
+                }
+            })
+        });
+
+        // Call live function to validate form or to show next question
+        function liveRecv(data) {
+            let q = data.question,
+                errors = data.errors;
+            $next.prop('disabled', false).blur();
+            if (!isNextQ) {
+                setErrors(errors);
+                if (Object.entries(errors).length === 0) {
+                    isCorrect = true;
+                    $('#form').submit();
+                }
+                isNextQ = data.is_next_q;
+                if (!isCorrect) {
+                    $('input').prop('disabled', true);
+                    $next.html('Move to the next question');
+                }
+            } else {
+                $('input').prop('disabled', false);
+                $('.form-control-errors').html('');
+                resetForm();
+                egoC.html(q.ego_c);
+                alterC.html(q.alter_c);
+                $next.html('Submit');
+                isNextQ = data.is_next_q;
+            }
+        }
+    </script>
+{% endblock %}

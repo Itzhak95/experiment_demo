@@ -1,0 +1,47 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    {% if subsession.round_number != 1 %}
+        <p>
+            It's time to bid in the next auction! (Remember that you will face
+            {% if num_bidders <= 2 %}
+                a different opponent
+            {% else %}
+                different opponents
+            {% endif %}
+            in this round than you did in the last.)
+        </p>
+    {% endif %}
+
+    {% for v in values %}
+        <p>
+            {% if forloop.counter == 1 %}
+                How many tokens would you want to bid if your valuation were
+            {% else %}
+                What if it were
+            {% endif %}
+            {{ v|c }}?
+        </p>
+
+        <div class="form-group required">
+            <div class="controls  field-b{{ forloop.counter }}">
+                <div class="input-group input-group-narrow">
+                    <input type="number" name="b{{ forloop.counter }}"
+                           value="None" step="{{ bid_step }}" min="0" max="{{ Constants.max_value }}"
+                           required="" id="id_b{{ forloop.counter }}" class="form-control">
+                    <div class="input-group-append">
+                        <span class="input-group-text">tokens</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    {% next_button %}
+
+{% endblock %}

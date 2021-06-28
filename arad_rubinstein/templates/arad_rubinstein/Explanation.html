@@ -1,0 +1,16 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    <p>
+    Why did you choose the number {{ player.decision }}? Please provide as thorough an explanation as you can.
+    </p>
+    {% formfields %}
+
+    {% next_button %}
+
+{% endblock %}

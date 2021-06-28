@@ -1,0 +1,26 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    <p>
+    You will start the experiment with {{ Constants.endowment }} in your account. You will then have the opportunity to
+    spend tokens (by bidding) in order to win further tokens (by winning auctions). At the end of the experiment, each token will
+    be converted into real money at the rate
+    </p>
+    <p>
+    <center>
+    1 token = £0.01
+    </center>
+    </p>
+    <p>
+    Thus, if you end up with 1000 tokens, you will be paid £10. In addition, you will be paid a flat fee of
+    {{ session.config.participation_fee }} for completing the experiment.
+    </p>
+
+    {% next_button %}
+
+{% endblock %}
