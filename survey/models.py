@@ -23,8 +23,8 @@ class Constants(BaseConstants):
     num_rounds = 1
 
     #Payment parameters
-    endowment = c(200)
-    exchange_rate = 0.01
+    endowment = c(100)
+    exchange_rate = 0.03
 
     seconds_for_timed_page = 60 * 5
 
