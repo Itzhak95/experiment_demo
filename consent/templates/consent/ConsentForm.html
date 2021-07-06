@@ -2,82 +2,79 @@
 {% load otree static %}
 
 {% block title %}
+
 {% endblock %}
 
 {% block content %}
     <p>
-        POINTLESS EDIT. You are invited to take part in a research study being conducted by Itzhak Rasooly in conjunction
+        You are invited to take part in a research study being conducted by Itzhak Rasooly in conjunction
         with the Centre for Experimental Social Sciences (CESS). The study has received ethics approval from
         the independent review boards of both the University of Oxford and CESS.
     </p>
+
     <p>
-        Before deciding whether to participate in the study, we ask that you carefully read the information below.
-        If you decide you do not want to participate, you may leave at any time without providing a reason and without
-        penalty. If you choose to leave before the completion of the experiment, your data will not be stored for later
-        use.
+    Before deciding whether to participate in the study, we ask that you carefully read the information below.
+    If you decide you do not want to participate, you may leave at any time without providing a reason and without
+    penalty. If you choose to leave before the completion of the experiment, your data will not be stored for later
+    use.
     </p>
 
     <p>
-        <strong>The Experiment:</strong> The purpose of this study is to better understand how
-        individuals bid in auctions. As a result,
-        you will be asked to bid in a series of auctions against your fellow experimental participants.
-    </p>
-    <p>
-        <strong>Participation:</strong> The experiment is expected to
-        take around 1 hour and you will be paid you earnings through PayPal
-        within two weeks of the experiment’s conclusion.
-        While you will be paid at least {{ session.config.participation_fee }}, you can earn
-        considerably more if you bid well in the auctions (participants historically earn £10 on average). If you do not
-        receive your compensation within two weeks of the completion of the experiment, please contact
-        <a href="mailto:cess-online@nuffield.ox.ac.uk">cess-online@nuffield.ox.ac.uk</a>.
-        Please note that you will not receive any compensation
-        if you choose to leave the study early.
-    </p>
-    <p>
-        <strong>Data Protection and Privacy:</strong> We will not record your name at any point in the study.
-        Accordingly, it is highly
-        unlikely that anyone will be able to personally identify you using data collected on you during the study. While
-        we will ask you a small number of demographic questions at the start of the study (e.g. age and gender), we will
-        delete all answers to these questions before sharing the data with any other researchers.
+    <strong>The Experiment:</strong> The purpose of this study is to better understand how individuals bid in auctions. As a result,
+    you will be asked to bid in a series of auctions against your fellow experimental participants.
     </p>
 
     <p>
-        <strong>Additional Information:</strong> If you are interested in receiving additional information about the
-        results of the study,
-        please contact
-        <a href="mailto:itzhak.rasooly@economics.ox.ac.uk">itzhak.rasooly@economics.ox.ac.uk</a> or
-        <a href="mailto:cess-online@nuffield.ox.ac.uk">cess-online@nuffield.ox.ac.uk</a>.
-        Itzhak will do his best to
-        provide a summary of the results within twelve months of the conclusion of the experiment.
+    <strong>Participation:</strong> The experiment is expected to take around 1 hour and you will be paid your earnings through PayPal
+    or Amazon within two weeks of the experiment’s conclusion. While you will be paid at least {{ session.config.participation_fee }}, you can earn
+    considerably more if you bid well in the auctions (participants historically earn £10 on average). Please note that you will not receive any compensation if you choose to leave the
+    study early.
     </p>
 
     <p>
-        <strong>Concerns:</strong> If you have any questions or concerns about any aspect of this project, you can
-        contact the primary
-        investigator (<a href="mailto:itzhak.rasooly@economics.ox.ac.uk">itzhak.rasooly@economics.ox.ac.uk</a>) or
-        CESS (<a href="mailto:cess-online@nuffield.ox.ac.uk">cess-online@nuffield.ox.ac.uk</a>), who will do their
-        best to answer your query. The researcher(s) should acknowledge reception of your concern within 10 working days
-        and give you an indication of how they intend to address it. If you do not receive a response, are dissatisfied
-        with the response you receive, or want to raise any concerns with the way in which the study is being conducted,
-        please contact
-        the Social Sciences & Humanities Inter-Divisional Research Ethics Committee at the University of Oxford:
+    <strong>Data Protection and Privacy:</strong> We will not record your name at any point in the study. Accordingly, it is highly
+    unlikely that anyone will be able to personally identify you using the data that you generate. While
+    we will ask you a small number of demographic questions at the start of the study (e.g. age and gender), we will
+    delete all answers to these questions before sharing the data with any other researchers.
     </p>
+
     <p>
-        Email: <a href="mailto:ethics@socsci.ox.ac.uk">ethics@socsci.ox.ac.uk</a>
+    <strong>Additional Information:</strong> If you are interested in receiving additional information about the results of the study,
+    please contact itzhak.rasooly@economics.ox.ac.uk or cess-online@nuffield.ox.ac.uk. Itzhak will do his best to
+    provide a summary of the results within twelve months of the conclusion of the experiment.
     </p>
+
     <p>
-        Address: Research Services, University of Oxford, Wellington Square, Oxford OX1 2JD
+    <strong>Concerns:</strong> If you have any questions or concerns about any aspect of this project, you can contact the primary
+    investigator Itzhak Rasooly (itzhak.rasooly@economics.ox.ac.uk) or CESS (cess-online@nuffield.ox.ac.uk), who will do their
+    best to answer your query. You should receive a response within 10 working days along with an indication of how your response
+    will be addressed. If you do not receive a response, or are dissatisfied
+    with the response you receive, please contact
+    the Social Sciences & Humanities Inter-Divisional Research Ethics Committee at the University of Oxford:
     </p>
+
     <p>
-        The Chair will seek to resolve the matter in a reasonably expeditious manner.
+    Email: ethics@socsci.ox.ac.uk
     </p>
+
+    <p>
+    Address: Research Services, University of Oxford, Wellington Square, Oxford OX1 2JD
+    </p>
+
+    <p>
+    The Chair will seek to resolve the matter in a reasonably expeditious manner.
+    </p>
+
     <p>
         Please click the following button to confirm that you agree to participate in the experiment.
     </p>
+
     <p>
         If you do not agree to participate, please close your browser now.
     </p>
-    <p class="text-center">
+
+<p class="text-center">
         <button class="otree-btn-next btn btn-primary">I AGREE TO PARTICIPATE</button>
     </p>
+
 {% endblock %}
