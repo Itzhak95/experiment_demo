@@ -1,26 +1,25 @@
-{% extends "global/QuizPage.html" %}
-{% load otree static %}
+{{ extends "global/QuizPage.html" }}
 
-{% block title %}
-{% endblock %}
+{{ block title }}
+{{ endblock }}
 
-{% block content %}
+{{ block content }}
 
     <p>
         Suppose that your valuation is <span id="ego_v">{{ q.ego_v }}</span> and that you choose to
         bid <span id="ego_b">{{ q.ego_b }}</span>. Suppose further that your opponent’s valuation
         is <span id="alter_v">{{ q.alter_v }}</span> and that they bid <span id="alter_b">{{ q.alter_b }}</span>.
-        {% if alter_bid_cancelled %}
+        {{ if alter_bid_cancelled }}
             Finally, assume that your opponent’s bid is cancelled but yours is not.
-        {% else %}
+        {{ else }}
             Finally, assume that neither your bid nor your opponent’s bid is cancelled.
-        {% endif %}
+        {{ endif }}
     </p>
 
-    {% formfields %}
+    {{ formfields }}
 
-    {% next_button %}
+    {{ next_button }}
 
-    {% include 'quiz/summary.html' %}
+    {{ include 'quiz/summary.html' }}
 
-{% endblock %}
+{{ endblock }}

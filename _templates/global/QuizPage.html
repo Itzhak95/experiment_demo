@@ -33,7 +33,7 @@
 
         let setErrors = function (errors) {
             $.each(errors, function(k, v) {
-                $('.field-' + k).find('.form-control-errors').html(v)
+                $('[name=' + k + ']').parents('.controls').find('.form-control-errors').html(v)
             });
         };
 

@@ -1,10 +1,7 @@
-{% extends "global/Page.html" %}
-{% load otree static %}
+{{ block title }}
+{{ endblock }}
 
-{% block title %}
-{% endblock %}
-
-{% block content %}
+{{ block content }}
     <p>
         Finally, once you have chosen how much to bid, we will flip a coin to decide whether your bid is ‘cancelled’.
         Simultaneously, we will flip a (separate) coin to determine if your opponent’s bid is cancelled. As you might expect:
@@ -15,6 +12,6 @@
         <li> If neither of your bids are cancelled, you win the auction if and only if you bid strictly more than your opponent (neither player wins the auction if both of your bids happen to be exactly the same).</li>
     </ul>
 
-    {% next_button %}
+    {{ next_button }}
 
-{% endblock %}
+{{ endblock }}

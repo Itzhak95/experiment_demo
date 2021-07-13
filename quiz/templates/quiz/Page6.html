@@ -1,21 +1,18 @@
-{% extends "global/Page.html" %}
-{% load otree static %}
+{{ block title }}
+{{ endblock }}
 
-{% block title %}
-{% endblock %}
-
-{% block content %}
+{{ block content }}
     <p>
         To summarise:
     </p>
     <ol>
         <li>You and your opponent both have a valuation between 0 and {{ Constants.max_value }} (all numbers equally likely).</li>
-        <li>You bid knowing your valuation but not that of your opponent.{% if bid_step == 5 %} You are allowed to bid any multiple of 5 between 0 and 100. {% else %} {% endif %} </li>
+        <li>You bid knowing your valuation but not that of your opponent.{{ if bid_step == 5 }} You are allowed to bid any multiple of 5 between 0 and 100. {{ else }} {{ endif }} </li>
         <li>You win the auction if you either bid more than your opponent does or if your opponent’s bid is cancelled
             (which happens 50% of the time).</li>
         <li>If you win the auction, you receive your valuation minus the number of tokens that you bid.</li>
     </ol>
 
-    {% next_button %}
+    {{ next_button }}
 
-{% endblock %}
+{{ endblock }}

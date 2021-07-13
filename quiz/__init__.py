@@ -48,6 +48,7 @@ class Player(BasePlayer):
 # FUNCTIONS
 def live_quiz(player: Player, data):
     is_next_q = data['is_next_q']
+    print('is_next_q =', is_next_q)
     alter_bid_cancelled = data['alter_bid_cancelled']
     if is_next_q:
         player.participant.vars['q'] = set_quiz_q(player, alter_bid_cancelled)
@@ -55,6 +56,7 @@ def live_quiz(player: Player, data):
         is_next_q = False
     else:
         errors = quiz_error_message(player, data['values'], alter_bid_cancelled)
+        print('errors =', errors)
         is_next_q = True
     return {player.id_in_group: dict(question=player.participant.vars['q'], errors=errors, is_next_q=is_next_q)}
 

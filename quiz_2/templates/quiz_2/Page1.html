@@ -1,11 +1,7 @@
-{% extends "global/Page.html" %}
-{% load otree static %}
+{{ block title }}
+{{ endblock }}
 
-{% block title %}
-
-{% endblock %}
-
-{% block content %}
+{{ block content }}
     <p>
     You and another player must each choose a (whole) number between 11 and 20 inclusive.  You will be paid (in tokens)
     whatever number you choose multiplied by 10. For example, if you choose the number {{ x }}, you will be paid {{ y }} tokens.
@@ -20,6 +16,6 @@
     will receive a bonus of 200 tokens if their number is exactly 1 lower than yours.
     </p>
 
-    {% next_button %}
+    {{ next_button }}
 
-{% endblock %}
+{{ endblock }}

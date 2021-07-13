@@ -1,21 +1,18 @@
-{% extends "global/Page.html" %}
-{% load otree static %}
+{{ block title }}
+{{ endblock }}
 
-{% block title %}
-{% endblock %}
-
-{% block content %}
+{{ block content }}
     <p>
         Once you know your valuation (i.e. how many tokens you will receive if you win the auction), you need to decide
         how much to bid.
-        {% if bid_step == 1 %}
+        {{ if bid_step == 1 }}
         You are free to bid any whole number from 0 to {{ Constants.max_value }} (bidding decimal numbers like 3.5 is not allowed).
         Meanwhile, your opponent will have learnt their valuation, and will decide what bid they want to submit.
-        {% else %}
+        {{ else }}
         You are free to bid any multiple of five between 0 and 100 inclusive. In other words, you are allowed to bid any of the numbers: 0, 5, 10, …, 95, 100.
         Meanwhile, your opponent will have learnt their valuation, and will decide what multiple of 5 they want to bid.
-        {% endif %}
+        {{ endif }}
     </p>
-    {% next_button %}
+    {{ next_button }}
 
-{% endblock %}
+{{ endblock }}

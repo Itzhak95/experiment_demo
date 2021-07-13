@@ -1,10 +1,7 @@
-{% extends "global/Page.html" %}
-{% load otree static %}
+{{ block title }}
+{{ endblock }}
 
-{% block title %}
-{% endblock %}
-
-{% block content %}
+{{ block content }}
     <p>
         Meanwhile, we will also choose the number of tokens that your opponent will receive if they win the auction.
         We will do this in the very same way, so their valuation is also equally likely to be 0, 1, 2, or indeed any of
@@ -12,6 +9,6 @@
         valuation of your opponent: they are independent random variables (like two rolls of a die).
     </p>
 
-    {% next_button %}
+    {{ next_button }}
 
-{% endblock %}
+{{ endblock }}

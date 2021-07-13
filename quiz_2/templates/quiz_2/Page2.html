@@ -1,16 +1,12 @@
-{% extends "global/Page.html" %}
-{% load otree static %}
+{{ block title }}
+{{ endblock }}
 
-{% block title %}
-
-{% endblock %}
-
-{% block content %}
+{{ block content }}
     <p>
     Before you play the game, here are a few questions to test your understanding of the rules. A summary of the
     rules will be available at the bottom of each page in the quiz.
     </p>
 
-    {% next_button %}
+    {{ next_button }}
 
-{% endblock %}
+{{ endblock }}
