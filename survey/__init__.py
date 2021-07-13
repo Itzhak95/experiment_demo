@@ -31,7 +31,7 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
     is_dropout = models.BooleanField()
-    age = models.IntegerField(label = "What is your age (in years)?", min=18, max=80)
+    age = models.IntegerField(label="What is your age (in years)?", min=18, max=80)
     gender = models.StringField(
         label="What is your gender?",
         choices=["Male", "Female", "Other", "Prefer not to say"],
