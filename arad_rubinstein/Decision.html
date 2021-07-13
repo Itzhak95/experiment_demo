@@ -1,16 +1,12 @@
-{% extends "global/Page.html" %}
-{% load otree static %}
+{{ block title }}
+{{ endblock }}
 
-{% block title %}
-
-{% endblock %}
-
-{% block content %}
+{{ block content }}
     <p>
-    It’s now time for you to play the game (the final part of the experiment!)
+        It’s now time for you to play the game (the final part of the experiment!)
     </p>
-    {% formfields %}
+    {{ formfields }}
 
-    {% next_button %}
+    {{ next_button }}
 
-{% endblock %}
+{{ endblock }}
