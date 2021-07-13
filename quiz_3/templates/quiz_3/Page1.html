@@ -1,22 +1,18 @@
-{% extends "global/Page.html" %}
-{% load otree static %}
+{{ block title }}
+{{ endblock }}
 
-{% block title %}
-
-{% endblock %}
-
-{% block content %}
+{{ block content }}
     <p>
         It is now time for you to participate in your second type of auction. While the rules are similar to those before,
         there are a few important differences. As before, we will determine your valuation by randomly choosing a whole
         number from 0 to 100 and any of the possible numbers (0, 1, 2, …, 100) are equally likely to be chosen. We
-        will do the same for {% if num_bidders == 2 %} your opponent{% else %} your three opponents{% endif %}.
-        Once you have learnt your valuation, you must then decide how much to bid and can choose any {% if bid_step == 1 %}
-        whole number {% else %} multiple of 5 {% endif %}between 0 and 100. The winner of the auction is the person who bids the most.
-        However, {% if num_bidders == 2 %}both {% else %}all {% endif %}of you will now have to pay your bids, including
-        the losing bidder{% if num_bidders > 2 %}s{% else %}{% endif %}.
+        will do the same for {{ if num_bidders == 2 }} your opponent{{ else }} your three opponents{{ endif }}.
+        Once you have learnt your valuation, you must then decide how much to bid and can choose any {{ if bid_step == 1 }}
+        whole number {{ else }} multiple of 5 {{ endif }}between 0 and 100. The winner of the auction is the person who bids the most.
+        However, {{ if num_bidders == 2 }}both {{ else }}all {{ endif }}of you will now have to pay your bids, including
+        the losing bidder{{ if num_bidders > 2 }}s{{ else }}{{ endif }}.
     </p>
 
-    {% next_button %}
+    {{ next_button }}
 
-{% endblock %}
+{{ endblock }}

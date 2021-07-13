@@ -1,22 +1,18 @@
-{% extends "global/Page.html" %}
-{% load otree static %}
+{{ block title }}
+{{ endblock }}
 
-{% block title %}
-
-{% endblock %}
-
-{% block content %}
+{{ block content }}
         <p>
-    Notice that there are {% if num_bidders == 2 %}two {% else %}three {% endif %}important differences from the auction before:
+    Notice that there are {{ if num_bidders == 2 }}two {{ else }}three {{ endif }}important differences from the auction before:
     </p>
     <ol>
         <li> There is no longer a possibility that bids are cancelled.</li>
-        {% if num_bidders > 2 %} <li> You will now bid against three opponents. </li> {% else %}{% endif %}
+        {{ if num_bidders > 2 }} <li> You will now bid against three opponents. </li> {{ else }}{{ endif }}
         <li> The loser now also pays their bid.</li>
     </ol>
     <p>
     Otherwise, the auction rules are exactly the same.
     </p>
-    {% next_button %}
+    {{ next_button }}
 
-{% endblock %}
+{{ endblock }}
