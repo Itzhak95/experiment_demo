@@ -1,49 +1,20 @@
-{{ block styles }}
-    <link href="{{ static 'bret/css/custom.css' }}" rel="stylesheet"/>
-{{ endblock }}
+{% extends "global/Page.html" %}
+{% load otree static %}
 
+{% block title %}
 
-{# ****************************************************************************************************************** #}
-{# *** TITLE *** #}
-{# ****************************************************************************************************************** #}
-{{ block title }}
-    Instructions
-{{ endblock }}
+{% endblock %}
 
+{% block content %}
+    <p>
+        On the next screen, you will see 64 boxes (arranged in a 8x8 table). Behind one of these boxes, a bomb is hidden; the remaining 99 boxes are empty. You do not know where the bomb is. You only know that it can be in any of the boxes with equal probability.
+    </p>
+    <p>
+        Your task is to choose how many boxes to collect. Assuming that you don’t collect the bomb, you will earn one token for every box that you collect. However, if you do collect the bomb, your total earnings will be zero.
+    </p>
+    <p>
+        To select a box, just click on it. Once you have finished collecting boxes, click 'stop' and then 'solve'.
+    </p>
+    {% next_button %}
 
-{# ****************************************************************************************************************** #}
-{# *** CONTENT *** #}
-{# ****************************************************************************************************************** #}
-{{ block content }}
-
-    <div class="instructions">
-        <p>
-           In the following, you will see a {{ num_rows }}x{{ num_cols }}-matrix containing
-           {{ num_boxes }} boxes on your screen.
-        </p>
-        <p>
-            As soon as you start the task by hitting the 'Start' button,
-            one of the boxes is collected per second, starting from the top-left corner.
-            Once collected, the box marked by a tick symbol.
-            For each box collected you earn {{ box_value }}.
-        </p>
-        <p>
-            Behind one of the boxes hides a bomb that destroys everything that has been collected.
-            The remaining {{ num_nobomb }} boxes are worth {{ box_value }} each.
-            You do not know where the bomb is located.
-            You only know that the bomb can be in any place with equal probability.
-        </p>
-        <p>
-            Your task is to choose when to stop the collecting process. You do so by hitting 'Stop' at any time.
-            If you collect the box where the bomb is located, the bomb will explode and you will earn zero.
-            If you stop before collecting the bomb, you gain the amount accumulated that far.
-        </p>
-        <p>
-           At the end of the task boxes are toggled by hitting the 'Solve' button.
-           A dollar sign or a fire symbol (for the bomb) will be shown on each of your collected boxes.
-        </p>
-
-    </div>
-
-     {{ next_button }}
-{{ endblock }}
+{% endblock %}
