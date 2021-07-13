@@ -40,7 +40,7 @@ def set_payoff(player: Player):
     # set payoffs if <random_payoff = True> to round_result of randomly chosen round
     # randomly determine round to pay on player level
     if player.round_number == 1:
-        player.participant.vars['round_to_pay'] = random.randint(1,Constants.num_rounds)
+        player.participant.vars['round_to_pay'] = random.randint(1, Constants.num_rounds)
 
     if Constants.random_payoff:
         if player.round_number == player.participant.vars['round_to_pay']:
@@ -69,7 +69,7 @@ class Instructions(Page):
             'num_cols':             Constants.num_cols,
             'num_boxes':            Constants.num_rows * Constants.num_cols,
             'num_nobomb':           Constants.num_rows * Constants.num_cols - 1,
-            'box_value':            Constants.box_actual_value,
+            'box_value':            Constants.box_value,
             'time_interval':        Constants.time_interval,
         }
 
@@ -135,13 +135,13 @@ class Results(Page):
     @staticmethod
     def vars_for_template(player: Player):
         total_payoff = sum([p.payoff for p in player.in_all_rounds()])
-        player.participant.vars['bret_payoff'] = round(total_payoff * 0.2, 2)
+        player.participant.vars['bret_payoff'] = total_payoff
 
         print(player.participant.vars['bret_payoff'])
 
         return {
             'player_in_all_rounds':   player.in_all_rounds(),
-            'box_value':              Constants.box_actual_value,
+            'box_value':              Constants.box_value,
             'boxes_total':            Constants.num_rows * Constants.num_cols,
             'boxes_collected':        player.boxes_collected,
             'bomb':                   player.bomb,

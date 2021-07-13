@@ -253,6 +253,7 @@ class Results(TimedPage):
         previous_tokens = player.participant.vars['tokens_so_far']
         other_bids = [str(p.bid) for p in player.get_others_in_group()]
         return dict(
+            payoff_abs=abs(player.payoff),
             tokens_so_far=previous_tokens + player.payoff,
             previous_tokens=previous_tokens,
             num_bidders=len(other_bids),

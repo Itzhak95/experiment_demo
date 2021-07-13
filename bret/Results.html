@@ -24,19 +24,27 @@
     <!-- ----------------------------------------------------------------------------------------------------------- -->
     {{ if Constants.num_rounds == 1 }}
         <div class="card card-info">
-            You chose to collect {{ boxes_collected }} out of {{ boxes_total }} boxes.
+            <p>
+                You chose to collect {{ boxes_collected }} out of {{ boxes_total }} boxes.
+            </p>
             
             <br/>
-            The bomb was hidden behind the box in row {{ bomb_row }}, column {{ bomb_col }}.
+            <p>
+                The bomb was hidden behind the box in row {{ bomb_row }}, column {{ bomb_col }}.
+            </p>
             
-            <br/><br/>
+            <br/>
             {{ if bomb }}
-                The bomb was among your {{ boxes_collected }} collected boxes.<br/>
-                Accordingly, all your earnings in this task were destroyed and your payoff amounts to {{ payoff }}.
+                <p>
+                    The bomb was among your {{ boxes_collected }} collected boxes.<br/>
+                    Accordingly, all your earnings in this task were destroyed and your payoff amounts to {{ payoff }}.
+                </p>
             {{ else }}
-                Your collected boxes did not contain the bomb.<br/>
-                Thus, you receive {{ box_value }} for each of the {{ boxes_collected }} boxes
-                you collected such that your payoff from this task amounts to <b>{{ payoff }}</b>.
+                <p>
+                    Your collected boxes did not contain the bomb.<br/>
+                    Thus, you receive {{ box_value }} for each of the {{ boxes_collected }} boxes
+                    you collected such that your payoff from this task amounts to <b>{{ payoff }}</b>.
+                </p>
             {{ endif }}
         </div>
 

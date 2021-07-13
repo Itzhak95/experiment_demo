@@ -27,7 +27,7 @@
         {% else %}
             Unfortunately, you did not win the auction this round.
             {% if player.bid > 0 %}
-                However, you still need to pay your bid, so lose {{ player.bid|abs }}.
+                However, you still need to pay your bid, so lose {{ payoff_abs }}.
                 As a result, your total balance falls from {{ previous_tokens }} to {{ tokens_so_far }}.
             {% else %}
                 Since you did not bid any tokens, you do not lose (or gain)
