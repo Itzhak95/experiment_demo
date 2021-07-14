@@ -176,7 +176,7 @@ class TimedPage(Page):
 
     @staticmethod
     def before_next_page(player: Player, timeout_happened):
-        if player.timeout_happened:
+        if timeout_happened:
             player.participant.vars['is_dropout'] = True
 
     @staticmethod
