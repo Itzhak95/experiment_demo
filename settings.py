@@ -37,7 +37,7 @@ SESSION_CONFIGS = [
         name='quiz',
         display_name="Quiz 1",
         num_demo_participants=1,
-        app_sequence=['quiz'],
+        app_sequence=['quiz', 'results'],
         num_bidders=2,
         bid_step=1
     ),

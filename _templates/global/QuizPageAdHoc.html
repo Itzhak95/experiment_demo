@@ -61,7 +61,7 @@
             $('.controls').append(errorsDiv);
             $next.html('Submit');
 
-            form.on('submit', function (e) {
+            $('.otree-btn-next').on('click', function (e) {
                 if (!isCorrect) {
                     e.preventDefault();
 
