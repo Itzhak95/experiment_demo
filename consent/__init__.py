@@ -1,7 +1,6 @@
 from otree.api import *
 
 
-
 author = 'Your name here'
 
 doc = """

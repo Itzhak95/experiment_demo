@@ -1,11 +1,7 @@
-{% extends "global/Page.html" %}
-{% load otree static %}
+{{ block title }}
+{{ endblock }}
 
-{% block title %}
-
-{% endblock %}
-
-{% block content %}
+{{ block content }}
     <p>
         You are invited to take part in a research study being conducted by Itzhak Rasooly in conjunction
         with the Centre for Experimental Social Sciences (CESS). The study has received ethics approval from
@@ -73,8 +69,8 @@
         If you do not agree to participate, please close your browser now.
     </p>
 
-<p class="text-center">
+    <p class="text-center">
         <button class="otree-btn-next btn btn-primary">I AGREE TO PARTICIPATE</button>
     </p>
 
-{% endblock %}
+{{ endblock }}

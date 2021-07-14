@@ -1,30 +1,26 @@
-{% extends "global/Page.html" %}
-{% load otree static %}
+{{ block title }}
+{{ endblock }}
 
-{% block title %}
-
-{% endblock %}
-
-{% block content %}
-    {% if subsession.round_number != 1 %}
+{{ block content }}
+    {{ if subsession.round_number != 1 }}
         <p>
             It's time to bid in the next auction! (Remember that you will face
-            {% if num_bidders <= 2 %}
+            {{ if num_bidders <= 2 }}
                 a different opponent
-            {% else %}
+            {{ else }}
                 different opponents
-            {% endif %}
+            {{ endif }}
             in this round than you did in the last.)
         </p>
-    {% endif %}
+    {{ endif }}
 
-    {% for v in values %}
+    {{ for v in values }}
         <p>
-            {% if forloop.counter == 1 %}
+            {{ if forloop.counter == 1 }}
                 How many tokens would you want to bid if your valuation were
-            {% else %}
+            {{ else }}
                 What if it were
-            {% endif %}
+            {{ endif }}
             {{ v|c }}?
         </p>
 
@@ -40,8 +36,8 @@
                 </div>
             </div>
         </div>
-    {% endfor %}
+    {{ endfor }}
 
-    {% next_button %}
+    {{ next_button }}
 
-{% endblock %}
+{{ endblock }}

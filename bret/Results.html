@@ -1,8 +1,18 @@
 {# ****************************************************************************************************************** #}
 {# *** STYLES *** #}
 {# ****************************************************************************************************************** #}
-{% extends "global/Page.html" %}
-{% load otree static %}
+{{ block styles }}
+    <link href="{{ static 'bret/css/custom.css' }}" rel="stylesheet"/>
+    <style>
+        .otree-title {
+            text-align: left;
+        }
+        .otree-btn-next {
+            display: block;
+        }
+    </style>
+{{ endblock }}
+
 
 {# ****************************************************************************************************************** #}
 {# *** TITLE *** #}
@@ -21,32 +31,33 @@
     <!-- information about results -->
     <!-- ----------------------------------------------------------------------------------------------------------- -->
     {{ if Constants.num_rounds == 1 }}
-        <div class="card card-info">
+        <div class="text-start">
             <p>
-                You chose to collect {{ boxes_collected }} out of the {{ boxes_total }} boxes.
+                You chose to collect {{ boxes_collected }} out of {{ boxes_total }} boxes.
             </p>
+
             <p>
                 The bomb was hidden behind the box in row {{ bomb_row }}, column {{ bomb_col }}.
             </p>
 
             {{ if bomb }}
                 <p>
-                    The bomb was among your {{ boxes_collected }} collected boxes.
+                    The bomb was among your {{ boxes_collected }} collected boxes.<br/>
                     Accordingly, all your earnings in this task were destroyed and your payoff amounts to {{ payoff }}.
                 </p>
             {{ else }}
                 <p>
-                    The boxes which you collected boxes did not contain the bomb.
+                    Your collected boxes did not contain the bomb.<br/>
                     Thus, you receive {{ box_value }} for each of the {{ boxes_collected }} boxes
-                    you collected; and your payoff from this task amounts to <b>{{ payoff }}</b>.
+                    you collected such that your payoff from this task amounts to <b>{{ payoff }}</b>.
                 </p>
             {{ endif }}
         </div>
 
     {{ else }}
-        <div class="card card-info">
+        <p>
             The table below summarizes the results of your decisions in the {{ Constants.num_rounds }} rounds played.
-        </div>
+        </p>
     {{ endif }}
 
 
@@ -54,10 +65,10 @@
     <!-- history table -->
     <!-- ----------------------------------------------------------------------------------------------------------- -->
     {{ if Constants.num_rounds > 1 }}
-        <div class="card">
-            <div class="card-header">
+        <div>
+            <p>
                 <b>Round History</b>
-            </div>
+            </p>
 
             <div class="table-responsive">
                 <table class="table">
@@ -85,13 +96,17 @@
             </div>
         </div>
 
-        <div class="card card-info">
+        <div>
         {{ if Constants.random_payoff }}
-            For your payment, round number {{ round_to_pay }} was randomly chosen. <br/>
-            Thus, your final payoff in this task amounts to {{ total_payoff }}.
+            <p>
+                For your payment, round number {{ round_to_pay }} was randomly chosen. <br/>
+                Thus, your final payoff in this task amounts to {{ total_payoff }}.
+            </p>
         {{ else }}
-            Your final payoff is determined by the sum of all payoffs per round
-            such that you final payoff in this task amounts to {{ total_payoff }}.
+            <p>
+                Your final payoff is determined by the sum of all payoffs per round
+                such that you final payoff in this task amounts to {{ total_payoff }}.
+            </p>
         {{ endif }}
         </div>
     {{ endif }}
