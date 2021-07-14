@@ -12,13 +12,13 @@ Your app description
 class Constants(BaseConstants):
     name_in_url = 'first_price'
     players_per_group = None
-    num_rounds = 5
+    num_rounds = 2
 
     seconds_for_timed_page = 60 * 5
 
-    num_bids = 5
+    num_bids = 10
     max_value = 100
-    endowment = 200
+    endowment = 100
 
     bid_steps = [1, 5]
     num_bidders = 2
@@ -223,7 +223,7 @@ class Question(TimedPage):
 
     @staticmethod
     def is_displayed(player: Player):
-        return player.round_number == 2
+        return player.round_number == 1
 
 
 class Choice(TimedPage):

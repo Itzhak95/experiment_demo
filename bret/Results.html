@@ -35,21 +35,20 @@
             <p>
                 You chose to collect {{ boxes_collected }} out of {{ boxes_total }} boxes.
             </p>
-
-            <p>
-                The bomb was hidden behind the box in row {{ bomb_row }}, column {{ bomb_col }}.
-            </p>
-
             {{ if bomb }}
                 <p>
-                    The bomb was among your {{ boxes_collected }} collected boxes.<br/>
+                    Unfortunately, however, you collected the bomb!
+                </p>
+                <p>
                     Accordingly, all your earnings in this task were destroyed and your payoff amounts to {{ payoff }}.
                 </p>
             {{ else }}
                 <p>
-                    Your collected boxes did not contain the bomb.<br/>
+                    Your collected boxes did not contain the bomb.
+                </p>
+                <p>
                     Thus, you receive {{ box_value }} for each of the {{ boxes_collected }} boxes
-                    you collected such that your payoff from this task amounts to <b>{{ payoff }}</b>.
+                    you collected; which means that your total payoff from this task is {{ payoff }}.
                 </p>
             {{ endif }}
         </div>

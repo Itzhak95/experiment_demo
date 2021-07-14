@@ -19,7 +19,7 @@ class Constants(BaseConstants):
 
     num_bids = 10
     max_value = 100
-    endowment = 200
+    endowment = 100
 
     bid_steps = [1, 5]
     num_bidders = 2
@@ -240,7 +240,7 @@ class Question(TimedPage):
 
     @staticmethod
     def is_displayed(player: Player):
-        return player.round_number == 2
+        return player.round_number == 1
 
 
 class Choice(TimedPage):

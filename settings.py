@@ -2,18 +2,18 @@ from os import environ
 
 SESSION_CONFIGS = [
     dict(
-        name='study_all_pay_first_price_one_step',
-        display_name="Study (All Pay then First Price / 1 Bid Step)",
+        name='study_one_step',
+        display_name="Study (First-price then all-pay / 1 Bid Step)",
         num_demo_participants=4,
-        app_sequence=['consent', 'survey', 'quiz', 'all_pay', 'quiz_2', 'first_price', 'quiz_3', 'arad_rubinstein', 'bret', 'results'],
+        app_sequence=['consent', 'survey', 'quiz', 'first_price', 'quiz_2', 'all_pay', 'quiz_3', 'arad_rubinstein', 'bret', 'results'],
         num_bidders=2,
         bid_step=1
     ),
     dict(
-        name='study_all_pay_first_price_five_step',
-        display_name="Study (All Pay then First Price / 5 Bid Step)",
+        name='study_five_step',
+        display_name="Study (First-price then all-pay / 5 Bid Step)",
         num_demo_participants=4,
-        app_sequence=['consent', 'survey', 'quiz', 'all_pay', 'quiz_2', 'first_price', 'quiz_3', 'arad_rubinstein', 'bret', 'results'],
+        app_sequence=['consent', 'survey', 'quiz', 'first_price', 'quiz_2', 'all_pay', 'quiz_3', 'arad_rubinstein', 'bret', 'results'],
         num_bidders=2,
         bid_step=5
     ),

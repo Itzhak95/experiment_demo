@@ -77,6 +77,14 @@ class Instructions(Page):
 # ******************************************************************************************************************** #
 # *** CLASS BOMB RISK ELICITATION TASK *** #
 # ******************************************************************************************************************** #
+class final_task(Page):
+    pass
+
+
+class clicking_instructions(Page):
+    pass
+
+
 class Decision(Page):
 
     # form fields on player level
@@ -154,11 +162,4 @@ class Results(Page):
         }
 
 
-page_sequence = [Decision]
-
-if Constants.instructions:
-    page_sequence.insert(0, Instructions)
-
-if Constants.results:
-    page_sequence.append(Results)
-
+page_sequence = [final_task, Instructions, clicking_instructions, Decision, Results]
