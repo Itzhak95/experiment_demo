@@ -246,6 +246,7 @@ class Results(TimedPage):
 
     @staticmethod
     def before_next_page(player: Player, timeout_happened):
+        super(Bid, Bid).before_next_page(player, timeout_happened)
         player.participant.vars['tokens_so_far'] += player.payoff
 
 
