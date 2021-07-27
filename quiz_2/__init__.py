@@ -122,7 +122,7 @@ class Question1(TimedPage):
     def vars_for_template(player: Player):
         question_n = 1
         player.participant.vars['q'] = set_quiz_q(question_n)
-        return dict(q=player.participant.vars['q'], question_n=question_n)
+        return dict(q=player.participant.vars['q'], question_n=question_n, alter_bid_cancelled=False)
 
 
 class Correct(TimedPage):
@@ -139,7 +139,7 @@ class Question2(TimedPage):
     def vars_for_template(player: Player):
         question_n = 2
         player.participant.vars['q'] = set_quiz_q(question_n)
-        return dict(q=player.participant.vars['q'], question_n=question_n)
+        return dict(q=player.participant.vars['q'], question_n=question_n, alter_bid_cancelled=False)
 
 
 page_sequence = [Intro, Page1, Page2, Question1, Correct, Question2, Correct]

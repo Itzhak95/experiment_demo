@@ -140,7 +140,7 @@ class Question2(TimedPage):
     def vars_for_template(player: Player):
         num_bidders = player.session.config['num_bidders']
         player.participant.vars['q'] = set_quiz_q(player)
-        return dict(q=player.participant.vars['q'], num_bidders=num_bidders)
+        return dict(q=player.participant.vars['q'], num_bidders=num_bidders, alter_bid_cancelled=False)
 
 
 class Correct(TimedPage):
