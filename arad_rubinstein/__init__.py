@@ -120,8 +120,12 @@ class Results(TimedPage):
         previous_tokens = player.participant.vars.get('tokens_so_far', 0)
         tokens_so_far = previous_tokens + player.payoff
         earnings_so_far = tokens_so_far * player.session.config["real_world_currency_per_point"]
-        return dict(tokens_so_far=tokens_so_far, earnings_so_far=earnings_so_far.to_real_world_currency(player.session),
-                    previous_tokens=previous_tokens)
+        return dict(
+            other_decision=player.get_others_in_group()[0],
+            tokens_so_far=tokens_so_far,
+            earnings_so_far=earnings_so_far.to_real_world_currency(player.session),
+            previous_tokens=previous_tokens
+        )
 
     @staticmethod
     def before_next_page(player: Player, timeout_happened):

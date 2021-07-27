@@ -4,7 +4,7 @@
 {{ block content }}
     <p>
         And now for the results! You chose the number {{ player.decision }} and your opponent chose
-        {{ player.get_others_in_group.0.decision }}, so you receive {{ player.payoff }}. This brings your balance from
+        {{ other_decision }}, so you receive {{ player.payoff }}. This brings your balance from
         {{ previous_tokens }} to {{ tokens_so_far }}, so you will paid {{ earnings_so_far }} in addition to
         your completion fee of {{ session.config.participation_fee }}.
     </p>
