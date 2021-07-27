@@ -106,7 +106,7 @@ class ResultsWaitPage(WaitPage):
     @staticmethod
     def after_all_players_arrive(group: Group):
         for p in group.get_players():
-            p.set_payoff()
+            set_payoff(p)
 
 
 class Explanation(TimedPage):
