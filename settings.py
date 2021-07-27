@@ -5,7 +5,7 @@ SESSION_CONFIGS = [
         name='study_one_step',
         display_name="Study (First-price then all-pay / 1 Bid Step)",
         num_demo_participants=4,
-        app_sequence=['consent', 'survey', 'quiz', 'first_price', 'quiz_2', 'all_pay', 'quiz_3', 'arad_rubinstein', 'bret', 'results'],
+        app_sequence=['consent', 'survey', 'quiz', 'first_price', 'quiz_3', 'all_pay', 'quiz_2', 'arad_rubinstein', 'bret', 'results'],
         num_bidders=2,
         bid_step=1
     ),
@@ -13,7 +13,7 @@ SESSION_CONFIGS = [
         name='study_five_step',
         display_name="Study (First-price then all-pay / 5 Bid Step)",
         num_demo_participants=4,
-        app_sequence=['consent', 'survey', 'quiz', 'first_price', 'quiz_2', 'all_pay', 'quiz_3', 'arad_rubinstein', 'bret', 'results'],
+        app_sequence=['consent', 'survey', 'quiz', 'first_price', 'quiz_3', 'all_pay', 'quiz_2', 'arad_rubinstein', 'bret', 'results'],
         num_bidders=2,
         bid_step=5
     ),
