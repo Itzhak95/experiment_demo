@@ -3,7 +3,7 @@ from os import environ
 SESSION_CONFIGS = [
     dict(
         name='study_one_step',
-        display_name="Study (First-price then all-pay / 1 Bid Step)",
+        display_name="Main session (integer bids)",
         num_demo_participants=4,
         app_sequence=['consent', 'survey', 'quiz', 'first_price', 'quiz_3', 'all_pay', 'quiz_2', 'arad_rubinstein', 'bret', 'results'],
         num_bidders=2,
@@ -11,7 +11,7 @@ SESSION_CONFIGS = [
     ),
     dict(
         name='study_five_step',
-        display_name="Study (First-price then all-pay / 5 Bid Step)",
+        display_name="Multiples of 5 session",
         num_demo_participants=4,
         app_sequence=['consent', 'survey', 'quiz', 'first_price', 'quiz_3', 'all_pay', 'quiz_2', 'arad_rubinstein', 'bret', 'results'],
         num_bidders=2,
@@ -19,7 +19,7 @@ SESSION_CONFIGS = [
     ),
     dict(
         name='auction_all_pay',
-        display_name="Auction All Pay (for testing)",
+        display_name="All-pay auction (for testing)",
         num_demo_participants=4,
         app_sequence=['all_pay', 'results'],
         num_bidders=2,
@@ -27,7 +27,7 @@ SESSION_CONFIGS = [
     ),
     dict(
         name='auction_first_price',
-        display_name="Auction First Price (for testing)",
+        display_name="First-price auction (for testing)",
         num_demo_participants=4,
         app_sequence=['first_price', 'results'],
         num_bidders=2,
@@ -35,7 +35,7 @@ SESSION_CONFIGS = [
     ),
     dict(
         name='quiz',
-        display_name="Quiz 1",
+        display_name="Quiz 1 (for testing)",
         num_demo_participants=1,
         app_sequence=['quiz', 'results'],
         num_bidders=2,
@@ -43,7 +43,7 @@ SESSION_CONFIGS = [
     ),
     dict(
         name='quiz_2',
-        display_name="Quiz 2",
+        display_name="Quiz 2 (for testing)",
         num_demo_participants=1,
         app_sequence=['quiz_2', 'results'],
         num_bidders=2,
@@ -51,7 +51,7 @@ SESSION_CONFIGS = [
     ),
     dict(
         name='quiz_3',
-        display_name="Quiz 3",
+        display_name="Quiz 3 (for testing)",
         num_demo_participants=1,
         app_sequence=['quiz_3', 'results'],
         num_bidders=2,
@@ -59,7 +59,7 @@ SESSION_CONFIGS = [
     ),
     dict(
         name='bret',
-        display_name="BRET",
+        display_name="BRET (for testing)",
         num_demo_participants=1,
         app_sequence=['bret'],
         num_bidders=2,
@@ -67,7 +67,7 @@ SESSION_CONFIGS = [
     ),
     dict(
         name='11_20_game',
-        display_name="11_20_game",
+        display_name="11-20 game (for testing)",
         num_demo_participants=2,
         app_sequence=['quiz_2', 'arad_rubinstein', 'results'],
         num_bidders=2,
