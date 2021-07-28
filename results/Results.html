@@ -5,10 +5,12 @@
 {% endblock %}
 
 {% block content %}
-    <p>TODO: text to introduce participants' payoff</p>
-    <p>Total: {{ participant.payoff }}</p>
-    <p>Token so far: {{ participant.vars.tokens_so_far}}</p>
-
+{#    <p>TODO: text to introduce participants' payoff</p>#}
+{#    <p>Total: </p>#}
+{#    <p>Token so far: </p>#}
+    <p>
+        Since your final balance is {{ participant.vars.tokens_so_far }}, your total experimental earnings are {{ earnings_so_far }}.
+    </p>
     <p>
         Many thanks for participating in the experiment!
     </p>

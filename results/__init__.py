@@ -36,8 +36,15 @@ class Dropout(Page):
 
 
 class Results(Page):
-    form_model = "player"
-    form_fields = ["feedback"]
+    def vars_for_template(player: Player):
+        previous_tokens = player.participant.vars.get('tokens_so_far', 0)
+        tokens_so_far = previous_tokens + player.payoff
+        earnings_so_far = tokens_so_far
+        return dict(
+            tokens_so_far=tokens_so_far,
+            earnings_so_far=earnings_so_far.to_real_world_currency(player.session),
+            previous_tokens=previous_tokens
+        )
 
 
 page_sequence = [Dropout, Results]
