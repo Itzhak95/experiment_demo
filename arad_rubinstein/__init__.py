@@ -121,7 +121,7 @@ class Results(TimedPage):
         tokens_so_far = previous_tokens + player.payoff
         earnings_so_far = tokens_so_far * player.session.config["real_world_currency_per_point"]
         return dict(
-            other_decision=player.get_others_in_group()[0],
+            other_decision=player.get_others_in_group()[0].decision,
             tokens_so_far=tokens_so_far,
             earnings_so_far=earnings_so_far.to_real_world_currency(player.session),
             previous_tokens=previous_tokens
