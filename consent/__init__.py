@@ -41,7 +41,7 @@ class TimedPage(Page):
             return upcoming_apps[-1]
 
 
-class ConsentForm(TimedPage):
+class ConsentForm(Page):
     pass
 
 

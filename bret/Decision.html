@@ -50,9 +50,6 @@
 {# ****************************************************************************************************************** #}
 {# *** TITLE *** #}
 {# ****************************************************************************************************************** #}
-{{ block title }}
-    Your Decision
-{{ endblock }}
 
 
 {# ****************************************************************************************************************** #}
@@ -116,18 +113,18 @@
 
                     <div data-ng-if="!bombTaskController.input">
                         <strong>
-                            No. of boxes collected:
+                            Number of boxes collected:
                         </strong>
                         <span data-ng-bind="bombTaskController.getCollectedBoxes()"></span>
                         <br>
                         <strong>
-                            No. of boxes remaining:
+                            Number of boxes remaining:
                         </strong>
                         <span data-ng-bind="bombTaskController.getRemainingBoxes()"></span>
                     </div>
                     <div data-ng-if="bombTaskController.input">
                         <label>
-                            No. of boxes to collect:
+                            Number of boxes to collect:
 
                             <input
                                 min="0"
