@@ -13,8 +13,8 @@ class Constants(BaseConstants):
     name_in_url = 'arad_rubinstein'
     players_per_group = 2
     num_rounds = 1
-    small_bonus = 100
-    large_bonus = 200
+    small_bonus = 10
+    large_bonus = 20
 
     decision_min = 11
     decision_max = 20
@@ -65,7 +65,7 @@ def set_payoff(player: Player):
     alter_decision = get_other(player).decision
     if not alter_decision:
         alter_decision = randint(Constants.decision_min, Constants.decision_min)
-    payoff = 10 * player.decision if player.decision else 0
+    payoff = player.decision if player.decision else 0
     payoff += Constants.large_bonus if player.decision == alter_decision - 1 else 0
     payoff += Constants.small_bonus if player.decision == alter_decision else 0
     player.payoff = payoff

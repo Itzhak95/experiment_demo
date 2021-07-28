@@ -3,17 +3,17 @@
 
 {{ block content }}
     <p>
-        You and another player must each choose a (whole) number between 11 and 20 inclusive.  You will be paid (in tokens)
-        whatever number you choose multiplied by 10. For example, if you choose the number {{ x }}, you will be paid {{ y }} tokens.
-        In addition,
+        You and another player are playing a game in which each player requests a number of tokens. The amount that you request
+        must be a (whole) number between 11 and 20 inclusive. You will receive whatever number of tokens that you request: for example,
+        if you request the number {{ x }}, you will be paid {{ x }} tokens. In addition,
     </p>
     <ul>
-        <li>If the number you choose is exactly one lower than the number chosen by your opponent, you receive a bonus of 200 tokens.</li>
-        <li>If the number you choose is the same as the number chosen by your opponent, you receive a bonus of 100 tokens.</li>
+        <li>If you request exactly one token fewer than your opponent does, you receive a bonus of 20 tokens.</li>
+        <li>If you request the same number of tokens as your opponent does, you receive a bonus of 10 tokens.</li>
     </ul>
     <p>
         Your opponent is playing the same game as you and has received the exact same instructions. So for example, they
-        will receive a bonus of 200 tokens if their number is exactly 1 lower than yours.
+        will receive a bonus of 20 tokens if they request one fewer token than you do.
     </p>
 
     {{ next_button }}

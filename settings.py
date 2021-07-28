@@ -65,6 +65,14 @@ SESSION_CONFIGS = [
         num_bidders=2,
         bid_step=1
     ),
+    dict(
+        name='11_20_game',
+        display_name="11_20_game",
+        num_demo_participants=2,
+        app_sequence=['quiz_2', 'arad_rubinstein', 'results'],
+        num_bidders=2,
+        bid_step=1
+    ),
 ]
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs

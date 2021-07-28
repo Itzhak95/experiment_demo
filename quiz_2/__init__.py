@@ -60,21 +60,20 @@ def quiz_error_message(player: Player, values, question_n):
     q = player.participant.vars['q']
     fields = list(values.keys())
     if question_n == 1:
-        corrects = dict(q1a=10 * q['ego_c'], q1b=10 * q['alter_c'])
+        corrects = dict(q1a=q['ego_c'], q1b=q['alter_c'])
     elif question_n == 2:
-        corrects = dict(q2a=10 * q['ego_c'] + 200, q2b=10 * q['alter_c'])
+        corrects = dict(q2a=q['ego_c'] + 20, q2b=q['alter_c'])
     msg_1 = {
-        fields[0]: f"In this case, you simply receive the number that you chose multiplied by 10. "
-                   f"So you receive {10*q['ego_c']} tokens.",
-        fields[1]: f"In this case, your opponent simply receives the number that they chose "
-                   f"multiplied by 10. So they receive {10*q['alter_c']} tokens."}
+        fields[0]: f"In this case, you simply receive the number of tokens that you requested. "
+                   f"So you receive {q['ego_c']} tokens.",
+        fields[1]: f"In this case, your opponent simply receives the number of tokens that they requested. "
+                   f"So they receive {q['alter_c']} tokens."}
     msg_2 = {
-        fields[0]: f'As always, you receive the number that you chose multiplied by 10. '
-                   f'However, since the number you chose is exactly one less than the number '
-                   f'chosen by your opponent, you receive a bonus of 200 tokens. '
-                   f'So you receive {10 * q["ego_c"]} + 200 = {10 * q["ego_c"] + 200} tokens in total.',
-        fields[1]: f'Once again, your opponent simply receives the number that you '
-                   f'chose multiplied by 10. So they receive {10*q["alter_c"]} tokens.'}
+        fields[0]: f'As always, you receive the number of tokens that you request. '
+                   f'However, since you requested exactly one token fewer than your opponent did, you receive a bonus of 20 tokens. '
+                   f'So you receive {q["ego_c"]} + 20 = {q["ego_c"] + 20} tokens in total.',
+        fields[1]: f'Once again, your opponent simply receives the number of tokens that they '
+                   f'requested. So they receive {q["alter_c"]} tokens.'}
     msg = msg_1 if fields[0] == 'q1a' else msg_2
     errors = dict()
     for k in values.keys():
