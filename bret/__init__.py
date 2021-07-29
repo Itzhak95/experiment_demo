@@ -162,4 +162,4 @@ class Results(Page):
         }
 
 
-page_sequence = [final_task, Instructions, clicking_instructions, Decision, Results]
+page_sequence = [final_task, Instructions, Decision, Results]
