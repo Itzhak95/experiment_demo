@@ -18,6 +18,15 @@ SESSION_CONFIGS = [
         bid_step=5
     ),
     dict(
+        name='payoff_testing',
+        display_name="payoff_testing",
+        num_demo_participants=4,
+        app_sequence=['first_price', 'all_pay', 'arad_rubinstein',
+                      'bret', 'results'],
+        num_bidders=2,
+        bid_step=5
+    ),
+    dict(
         name='auction_all_pay',
         display_name="All-pay auction (for testing)",
         num_demo_participants=4,
@@ -81,7 +90,7 @@ SESSION_CONFIGS = [
 # e.g. self.session.config['participation_fee']
 
 SESSION_CONFIG_DEFAULTS = dict(
-    real_world_currency_per_point=0.05, participation_fee=0.00, doc=""
+    real_world_currency_per_point=0.05, participation_fee=2.00, doc=""
 )
 
 PARTICIPANT_FIELDS = []
