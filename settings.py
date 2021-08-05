@@ -24,7 +24,7 @@ SESSION_CONFIGS = [
         app_sequence=['first_price', 'all_pay', 'arad_rubinstein',
                       'bret', 'results'],
         num_bidders=2,
-        bid_step=5
+        bid_step=1
     ),
     dict(
         name='auction_all_pay',
