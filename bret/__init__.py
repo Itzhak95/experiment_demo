@@ -144,6 +144,7 @@ class Results(Page):
     def vars_for_template(player: Player):
         total_payoff = sum([p.payoff for p in player.in_all_rounds()])
         player.participant.vars['bret_payoff'] = total_payoff
+        player.participant.vars['tokens_so_far'] += total_payoff
 
         print(player.participant.vars['bret_payoff'])
 
