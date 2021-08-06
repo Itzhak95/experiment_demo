@@ -108,7 +108,7 @@ POINTS_CUSTOM_NAME = 'tokens'
 ROOMS = [
     dict(
         name='virtual_lab_1',
-        display_name='Virtual Lab 2',
+        display_name='Virtual Lab 1',
         participant_label_file='_rooms/virtual_lab_1.txt'
     ),
     dict(
