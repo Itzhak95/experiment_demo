@@ -132,7 +132,7 @@ class Results(TimedPage):
         previous_tokens = player.participant.vars.get('tokens_so_far', 0)
         tokens_so_far = previous_tokens + player.payoff
         player.participant.payoff = tokens_so_far
-        if player.participant.vars.get('tokens_so_far'):
+        if 'tokens_so_far' in player.participant.vars:
             player.participant.vars['tokens_so_far'] = tokens_so_far
 
 
