@@ -12,7 +12,7 @@ SESSION_CONFIGS = [
     dict(
         name='study_five_step',
         display_name="Multiples of 5 session",
-        num_demo_participants=4,
+        num_demo_participants=6,
         app_sequence=['consent', 'survey', 'quiz', 'first_price', 'quiz_3', 'all_pay', 'quiz_2', 'arad_rubinstein', 'bret', 'results'],
         num_bidders=2,
         bid_step=5
