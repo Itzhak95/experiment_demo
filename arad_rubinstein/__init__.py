@@ -40,8 +40,9 @@ class Player(BasePlayer):
 def set_groups_for_curr_round(subsession: Subsession):
     size = Constants.players_per_group
     players = subsession.get_players()
-    unmatched = []
-    active_players = [p.participant.id_in_session for p in players if not p.participant.vars.get('is_dropout')]
+    unmatched = [p.participant.id_in_session for p in players if p.participant.vars.get('is_unmatched')]
+    active_players = [p.participant.id_in_session for p in players if
+                      not p.participant.vars.get('is_dropout') and not p.participant.vars.get('is_unmatched')]
     shuffle(active_players)
     if len(active_players) % 2 == 1:
         unmatched.append(active_players.pop())
