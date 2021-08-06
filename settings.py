@@ -20,7 +20,7 @@ SESSION_CONFIGS = [
     dict(
         name='payoff_testing',
         display_name="payoff_testing",
-        num_demo_participants=4,
+        num_demo_participants=6,
         app_sequence=['first_price', 'all_pay', 'arad_rubinstein',
                       'bret', 'results'],
         num_bidders=2,
