@@ -97,7 +97,7 @@ class MatchingPage(WaitPage):
             return upcoming_apps[-1]
 
 
-class Decision(TimedPage):
+class Decision(Page):
     form_model = "player"
     form_fields = ["decision"]
 
@@ -110,12 +110,12 @@ class ResultsWaitPage(WaitPage):
             set_payoff(p)
 
 
-class Explanation(TimedPage):
+class Explanation(Page):
     form_model = "player"
     form_fields = ["explanation"]
 
 
-class Results(TimedPage):
+class Results(Page):
     @staticmethod
     def vars_for_template(player: Player):
         previous_tokens = player.participant.vars.get('tokens_so_far', 0)

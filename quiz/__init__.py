@@ -115,33 +115,33 @@ class TimedPage(Page):
             return upcoming_apps[-1]
 
 
-class QuestionN(TimedPage):
+class QuestionN(Page):
     template_name = 'quiz/QuestionN.html'
     form_model = 'player'
 
     live_method = live_quiz
 
 
-class Page1(TimedPage):
+class Page1(Page):
     pass
 
 
-class Page2(TimedPage):
+class Page2(Page):
     pass
 
 
-class Page3(TimedPage):
+class Page3(Page):
     @staticmethod
     def vars_for_template(player: Player):
         bid_step = player.session.config['bid_step']
         return dict(bid_step=bid_step)
 
 
-class Page4(TimedPage):
+class Page4(Page):
     pass
 
 
-class Page5(TimedPage):
+class Page5(Page):
     @staticmethod
     def vars_for_template(player: Player):
         value = randrange(player.session.config['bid_step'], 100, 1)
@@ -150,23 +150,23 @@ class Page5(TimedPage):
         return dict(value=value, bid=bid, net=net)
 
 
-class Page6(TimedPage):
+class Page6(Page):
     @staticmethod
     def vars_for_template(player: Player):
         bid_step = player.session.config['bid_step']
         return dict(bid_step=bid_step)
 
 
-class Page7(TimedPage):
+class Page7(Page):
     pass
 
 
-class Question1(TimedPage):
+class Question1(Page):
     form_model = 'player'
     form_fields = ['q1']
 
 
-class Answer1(TimedPage):
+class Answer1(Page):
     pass
 
 
@@ -194,7 +194,7 @@ class Question3(QuestionN):
         return dict(q=player.participant.vars['q'], alter_bid_cancelled=alter_bid_cancelled)
 
 
-class FinalPage(TimedPage):
+class FinalPage(Page):
     @staticmethod
     def vars_for_template(player: Player):
         value = randrange(player.session.config['bid_step'], 100, 1)

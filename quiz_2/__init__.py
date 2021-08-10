@@ -97,21 +97,21 @@ class TimedPage(Page):
             return upcoming_apps[-1]
 
 
-class Intro(TimedPage):
+class Intro(Page):
     pass
 
 
-class Page1(TimedPage):
+class Page1(Page):
     def vars_for_template(self):
         x = randint(11, 20)
         return dict(x=x, y=10*x)
 
 
-class Page2(TimedPage):
+class Page2(Page):
     pass
 
 
-class Question1(TimedPage):
+class Question1(Page):
     form_model = 'player'
     form_fields = ['q1a', 'q1b']
 
@@ -124,11 +124,11 @@ class Question1(TimedPage):
         return dict(q=player.participant.vars['q'], question_n=question_n, alter_bid_cancelled=False)
 
 
-class Correct(TimedPage):
+class Correct(Page):
     pass
 
 
-class Question2(TimedPage):
+class Question2(Page):
     form_model = 'player'
     form_fields = ['q2a', 'q2b']
 

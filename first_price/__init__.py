@@ -195,7 +195,7 @@ class MatchingPage (WaitPage):
             return upcoming_apps[-1]
 
 
-class Bid(TimedPage):
+class Bid(Page):
     form_model = 'player'
     form_fields = [f'b{n+1}' for n in range(Constants.num_bids)]
 
@@ -217,7 +217,7 @@ class ResultsWaitPage(WaitPage):
             set_payoff(p)
 
 
-class Question(TimedPage):
+class Question(Page):
     form_model = 'player'
     form_fields = ['answer1', 'answer2']
 
@@ -226,11 +226,11 @@ class Question(TimedPage):
         return player.round_number == 1
 
 
-class Choice(TimedPage):
+class Choice(Page):
     pass
 
 
-class Results(TimedPage):
+class Results(Page):
 
     @staticmethod
     def vars_for_template(player: Player):

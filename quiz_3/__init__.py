@@ -95,7 +95,7 @@ class TimedPage(Page):
             return upcoming_apps[-1]
 
 
-class Page1(TimedPage):
+class Page1(Page):
 
     @staticmethod
     def vars_for_template(player: Player):
@@ -104,7 +104,7 @@ class Page1(TimedPage):
         return dict(num_bidders=num_bidders, bid_step=bid_step)
 
 
-class Page2(TimedPage):
+class Page2(Page):
 
     @staticmethod
     def vars_for_template(player: Player):
@@ -112,11 +112,11 @@ class Page2(TimedPage):
         return dict(num_bidders=num_bidders)
 
 
-class Page3(TimedPage):
+class Page3(Page):
     pass
 
 
-class Question1(TimedPage):
+class Question1(Page):
     form_model = 'player'
     form_fields = ['q1']
 
@@ -126,11 +126,11 @@ class Question1(TimedPage):
         return dict(num_bidders=num_bidders)
 
 
-class Answer(TimedPage):
+class Answer(Page):
     pass
 
 
-class Question2(TimedPage):
+class Question2(Page):
     form_model = 'player'
     form_fields = ['q2a', 'q2b', 'q2c']
 
@@ -143,11 +143,11 @@ class Question2(TimedPage):
         return dict(q=player.participant.vars['q'], num_bidders=num_bidders, alter_bid_cancelled=False)
 
 
-class Correct(TimedPage):
+class Correct(Page):
     pass
 
 
-class FinalPage(TimedPage):
+class FinalPage(Page):
     pass
 
 

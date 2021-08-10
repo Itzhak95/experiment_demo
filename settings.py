@@ -3,84 +3,19 @@ from os import environ
 SESSION_CONFIGS = [
     dict(
         name='study_one_step',
-        display_name="Main session (integer bids)",
+        display_name="Main treatment (integer bids)",
         num_demo_participants=4,
-        app_sequence=['consent', 'survey', 'quiz', 'first_price', 'quiz_3', 'all_pay', 'quiz_2', 'arad_rubinstein', 'bret', 'results'],
+        app_sequence=['survey', 'quiz', 'first_price', 'quiz_3', 'all_pay', 'quiz_2', 'arad_rubinstein', 'bret', 'results'],
         num_bidders=2,
         bid_step=1
     ),
     dict(
         name='study_five_step',
-        display_name="Multiples of 5 session",
-        num_demo_participants=6,
-        app_sequence=['consent', 'survey', 'quiz', 'first_price', 'quiz_3', 'all_pay', 'quiz_2', 'arad_rubinstein', 'bret', 'results'],
+        display_name="Alternate treatment (multiples)",
+        num_demo_participants=4,
+        app_sequence=['survey', 'quiz', 'first_price', 'quiz_3', 'all_pay', 'quiz_2', 'arad_rubinstein', 'bret', 'results'],
         num_bidders=2,
         bid_step=5
-    ),
-    dict(
-        name='payoff_testing',
-        display_name="payoff_testing",
-        num_demo_participants=6,
-        app_sequence=['first_price', 'all_pay', 'arad_rubinstein',
-                      'bret', 'results'],
-        num_bidders=2,
-        bid_step=1
-    ),
-    dict(
-        name='auction_all_pay',
-        display_name="All-pay auction (for testing)",
-        num_demo_participants=4,
-        app_sequence=['all_pay', 'results'],
-        num_bidders=2,
-        bid_step=1
-    ),
-    dict(
-        name='auction_first_price',
-        display_name="First-price auction (for testing)",
-        num_demo_participants=4,
-        app_sequence=['first_price', 'results'],
-        num_bidders=2,
-        bid_step=1
-    ),
-    dict(
-        name='quiz',
-        display_name="Quiz 1 (for testing)",
-        num_demo_participants=1,
-        app_sequence=['quiz', 'results'],
-        num_bidders=2,
-        bid_step=1
-    ),
-    dict(
-        name='quiz_2',
-        display_name="Quiz 2 (for testing)",
-        num_demo_participants=1,
-        app_sequence=['quiz_2', 'results'],
-        num_bidders=2,
-        bid_step=1
-    ),
-    dict(
-        name='quiz_3',
-        display_name="Quiz 3 (for testing)",
-        num_demo_participants=1,
-        app_sequence=['quiz_3', 'results'],
-        num_bidders=2,
-        bid_step=1
-    ),
-    dict(
-        name='bret',
-        display_name="BRET (for testing)",
-        num_demo_participants=1,
-        app_sequence=['bret'],
-        num_bidders=2,
-        bid_step=1
-    ),
-    dict(
-        name='11_20_game',
-        display_name="11-20 game (for testing)",
-        num_demo_participants=2,
-        app_sequence=['quiz_2', 'arad_rubinstein', 'results'],
-        num_bidders=2,
-        bid_step=1
     ),
 ]
 
@@ -90,7 +25,7 @@ SESSION_CONFIGS = [
 # e.g. self.session.config['participation_fee']
 
 SESSION_CONFIG_DEFAULTS = dict(
-    real_world_currency_per_point=0.05, participation_fee=2.00, doc=""
+    real_world_currency_per_point=0.05, participation_fee=2.00, doc="", OTREE_PRODUCTION=1,
 )
 
 PARTICIPANT_FIELDS = []

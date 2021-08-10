@@ -71,7 +71,7 @@ class Time(Page):
     pass
 
 
-class Questions(TimedPage):
+class Questions(Page):
     form_model = "player"
     form_fields = ["age", "gender", "subject"]
 
